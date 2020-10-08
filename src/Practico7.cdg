@@ -2,7 +2,7 @@
 
 <ClassDiagram name="Practico7">
   <ClassDiagramComponents>
-    <Class name="Cliente" package="" visibility="public" xPosition="18.0" yPosition="45.0">
+    <Class name="Cliente" package="" visibility="public" xPosition="6.0" yPosition="6.0">
       <Fields>
         <Field name="dni" type="long" visibility="private"/>
         <Field name="apellido" type="String" visibility="private"/>
@@ -42,7 +42,7 @@
         <Method name="getDireccion" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Directorio" package="" visibility="public" xPosition="553.0" yPosition="314.0">
+    <Class name="Directorio" package="" visibility="public" xPosition="101.0" yPosition="474.0">
       <Fields/>
       <Constructors/>
       <Methods>
