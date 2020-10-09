@@ -1,5 +1,7 @@
 package practico7;
 
+import java.util.Objects;
+
 public class Cliente 
 {
     private long dni;
@@ -65,4 +67,67 @@ public class Cliente
     {
         return this.direccion;
     }
+
+    @Override
+    public String toString() 
+    {
+        return ("dni: " + dni 
+                + ", apellido: " + apellido 
+                + ", nombre: " + nombre 
+                + ", ciudad: " + ciudad 
+                + ", direccion: " + direccion);
+    }
+
+    @Override
+    public int hashCode() 
+    {
+        int hash = 7;
+        hash = 61 * hash + (int) (this.dni ^ (this.dni >>> 32));
+        hash = 61 * hash + Objects.hashCode(this.apellido);
+        hash = 61 * hash + Objects.hashCode(this.nombre);
+        hash = 61 * hash + Objects.hashCode(this.ciudad);
+        hash = 61 * hash + Objects.hashCode(this.direccion);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) 
+    {
+        if (this == obj) 
+        {
+            return true;
+        }
+        if (obj == null) 
+        {
+            return false;
+        }
+        if (getClass() != obj.getClass()) 
+        {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        if (this.dni != other.dni) 
+        {
+            return false;
+        }
+        if (!Objects.equals(this.apellido, other.apellido)) 
+        {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) 
+        {
+            return false;
+        }
+        if (!Objects.equals(this.ciudad, other.ciudad)) 
+        {
+            return false;
+        }
+        if (!Objects.equals(this.direccion, other.direccion)) 
+        {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }

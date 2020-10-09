@@ -1,9 +1,8 @@
 package practico7;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
-
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -58,24 +57,19 @@ public class Directorio
         return telefonos;
     }
 
-    public ArrayList<Cliente> buscarClientes(String ciudad) 
+    public HashSet<Cliente> buscarClientes(String ciudad) 
     {
-        ArrayList<Cliente> clientes = new ArrayList();
+        HashSet<Cliente> clientes = new HashSet<>();
         Set<Long> claves = listaClientes.keySet();
-        Iterator<Long> it = claves.iterator();
-        Long key ;
-        long num1 = -1;
-        long num2 = -1;
-        while(it.hasNext())
+        
+        for(Long it: claves)
         {
-            key=it.next();
-            num1=listaClientes.get(key).getDni();
-            if(listaClientes.get(key).getCiudad() == ciudad && num1 != num2)
+            if(listaClientes.get(it).getCiudad().equals(ciudad))
             {
-                clientes.add(listaClientes.get(key));
-                num2 = num1;
-            }    
+                clientes.add(listaClientes.get(it));
+            }
         }
+
         return clientes;
     }
 
@@ -104,4 +98,6 @@ public class Directorio
             System.out.println();
         }
     }
+    
+    
 }
