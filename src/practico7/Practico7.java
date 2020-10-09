@@ -36,8 +36,8 @@ public class Practico7
         
         int i = 0;
         String ciudad = "San Luis";
+        System.out.println("Los siguientes clientes viven en "+ ciudad + " : " );
         System.out.println(d.buscarClientes(ciudad).toString());
-
     }
         
         
